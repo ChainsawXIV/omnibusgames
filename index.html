@@ -13,14 +13,16 @@
 		<meta name="language" content="English">
 		
 		<link rel="icon" type="image/png" href="images/favicon.ico">
-		
 		<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Raleway:400,500,700" rel="stylesheet">
+
+		<!-- Basic Element Styles -->
 		<style>
 		
 			html{
 				margin:0em;
 				padding:0em;
 			}
+			
 			body,div,img{
 				text-align:center;
 				margin:0em;
@@ -28,30 +30,42 @@
 				font-family: 'Raleway', sans-serif;
 				font-weight:500;
 			}
+			
 			body{
 				background-color:#CCCCCC;
 			}
+			
 			h1,h2,h3,h4,h5{
 				font-family: 'Cinzel Decorative', cursive;
 				font-weight:700;
+				position:relative;
+				z-index:100;
 			}
+			
 			h1{
 				font-size:3.5em;
 				margin-bottom:0em;
 			}
+			
 			h2{
 				font-weight:400;
 				margin-top:-0.5em;
 			}
 			
-			.hicon{
-		    height:10em;
-				position:absolute;
-				top:-3.1em;
-				transform:translateX(-50%);
-				opacity:0.5;
-				z-index:-1;
+			p{
+				padding-left:3em;
+				padding-right:3em;
 			}
+			
+			::-webkit-scrollbar{
+				display:none;
+			}
+			
+		</style>
+		
+		<!-- Main Layout Styles -->
+		<style>
+
 			.core{
 				background-color:#FFFFFF;
 				max-width:57em;
@@ -60,79 +74,13 @@
 				height:100%;
 			}
 
-			.parallax{
-				position:relative;
-			  overflow-x:hidden;
-				overflow-y:hidden;
-			}
-			.parallax .layer{
-				display:block;
+			.hicon{
+		    height:10em;
 				position:absolute;
-				width:100%;
-			}
-			.credit{
-				color:#CCC;
-				font-style:italic;
-				font-weight:400;
-				font-size:0.7em;
-				position:absolute;
-				bottom:0.2em;
-				right:0.5em;
-			}
-			
-			.header{
-				position:fixed;
-				top:0em;
-				width:100vw;
-				z-index:3;
-				background-color:black;
-				color:#CCC;
-				text-align:left;
-				background-image:url('images/maze-texture.png');
-				background-size:30em;
-				background-position:-13.5em 50%;
-				background-repeat:no-repeat;
-
-			}
-			.logo{
-				height:2em;
-				margin-top:0.5em;
-				margin-bottom:0.1em;
-				margin-left:0.4em;
-			}
-			.logo-icon{
-				display:none;
-			}
-			.menu{
-				position:absolute;
-				right:0em;
-				text-transform:uppercase;
-			}
-			.menu a,.social{
-				display:inline-block;
-				color:#EEE;
-				text-decoration:none;
-				height:1.75em;
-				padding-top:0.75em;
-				padding-right:1.0em;
-				padding-left:1.0em;
-				font-family: 'Cinzel Decorative', cursive;
-				font-weight:700;
-			}
-			.menu a:hover{
-				color:#DDD;
-			}
-			.menu a:active{
-				color:#FFF;
-			}
-			.social a{
-				padding:0em 0em 0em 0em;
-			}
-			.social img{
-				position:relative;
-				top:0.1em;
-				width:1.0em;
-				
+				top:-3.1em;
+				transform:translateX(-50%);
+				opacity:0.5;
+				z-index:0;
 			}
 			
 			.first-banner{
@@ -149,69 +97,21 @@
 				max-width:870px;
 				margin:0em auto;
 			}
+			
 			.section table{
 				text-align:left;
 				margin:0em 3em;
 			}
+			
 			.section td{
 				width:50%;
 				vertical-align:middle;
 			}
+			
 			.section li{
 				margin-bottom:1em;
 			}
-			
-			.gallery{
-				background-size:100%;
-				transition:background 0.7s;
-				background-repeat:no-repeat;
-				width:100%;
-				position:relative;
-				width:20.3em;
-				margin:1em 0em 1em 2em;
-			}
-			.gallery .nav{
-				position:absolute;
-				bottom:0.3em;
-				left:0em;
-				width:100%;
-			}
-			.gallery .nav .button{
-				display:inline-block;
-				height:1em;
-				width:1em;
-				margin:0em 0.2em;
-				background-color:rgba(192,192,192,0.6);
-				border:0.05em solid #444;
-				border-radius:1.0em;
-				cursor:pointer;
-			}
-			.gallery .nav .button.active{
-				background-color:rgba(192,192,192,1.0);
-				border:0.05em solid #000;
-				border-radius:1.0em;
-			}
-			.viewer{
-				display:none;
-				position:fixed;
-				top:0em;
-				left:0em;
-				background-color:rgba(0,0,0,0.95);
-				text-align:center;
-				vertical-align:middle;
-				width:100vw;
-				height:100vh;
-				z-index:100;
-			}
-			.viewer img{
-				max-width:80vw;
-				max-height:80vh;
-				position:absolute;
-				top:50%;
-				left:50%;
-				transform:translateY(-50%) translateX(-50%);
-			}
-			
+
 			.shop,.free{
 				display:block;
 				background-color:rgba(255,200,112,0.5);
@@ -225,34 +125,190 @@
 				text-decoration:none;
 				color:black;
 			}
+			
 			.shop:hover{
 				background-color:rgba(255,200,112,0.6);
 			}
+			
 			.shop span,.free span{
 				position:relative;
 				top:0.05em;
 			}
+			
 			.shop img{
 				height:1em;
 				position:relative;
 				left:0.1em;
 				top:0.3em;
 			}
+			
 			.free{
 				background-color:rgba(200,255,112,0.5);
 				border:0.1em solid #A8DF50;
 			}
+			
 			.free:hover{
 				background-color:rgba(200,255,112,0.6);
 			}
-			p{
-				padding-left:3em;
-				padding-right:3em;
+			
+		</style>
+		
+		<!-- Parrallax Styles -->
+		<style>
+
+			.parallax{
+				position:relative;
+			  overflow-x:hidden;
+				overflow-y:hidden;
 			}
 			
-			::-webkit-scrollbar{
+			.parallax .layer{
+				display:block;
+				position:absolute;
+				width:100%;
+			}
+			
+			.credit{
+				color:#CCC;
+				font-style:italic;
+				font-weight:400;
+				font-size:0.7em;
+				position:absolute;
+				bottom:0.2em;
+				right:0.5em;
+			}
+			
+		</style>
+		
+		<!-- Header Menu Styles -->
+		<style>
+			
+			.header{
+				position:fixed;
+				top:0em;
+				width:100vw;
+				z-index:3;
+				background-color:black;
+				color:#CCC;
+				text-align:left;
+				background-image:url('images/maze-texture.png');
+				background-size:30em;
+				background-position:-13.5em 50%;
+				background-repeat:no-repeat;
+			}
+			
+			.logo{
+				height:2em;
+				margin-top:0.5em;
+				margin-bottom:0.1em;
+				margin-left:0.4em;
+			}
+			
+			.logo-icon{
 				display:none;
 			}
+			
+			.menu{
+				position:absolute;
+				right:0em;
+				text-transform:uppercase;
+			}
+			
+			.menu a,.social{
+				display:inline-block;
+				color:#EEE;
+				text-decoration:none;
+				height:1.75em;
+				padding-top:0.75em;
+				padding-right:1.0em;
+				padding-left:1.0em;
+				font-family: 'Cinzel Decorative', cursive;
+				font-weight:700;
+			}
+			
+			.menu a:hover{
+				color:#DDD;
+			}
+			
+			.menu a:active{
+				color:#FFF;
+			}
+			
+			.social a{
+				padding:0em 0em 0em 0em;
+			}
+			
+			.social img{
+				position:relative;
+				top:0.1em;
+				width:1.0em;
+			}
+			
+		</style>
+		
+		<!-- Gallery Styles -->
+		<style>
+			
+			.gallery{
+				background-size:100%;
+				transition:background 0.7s;
+				background-repeat:no-repeat;
+				width:100%;
+				position:relative;
+				width:20.3em;
+				margin:1em 0em 1em 2em;
+			}
+			
+			.gallery .nav{
+				position:absolute;
+				bottom:0.3em;
+				left:0em;
+				width:100%;
+			}
+			
+			.gallery .nav .button{
+				display:inline-block;
+				height:1em;
+				width:1em;
+				margin:0em 0.2em;
+				background-color:rgba(192,192,192,0.6);
+				border:0.05em solid #444;
+				border-radius:1.0em;
+				cursor:pointer;
+			}
+			
+			.gallery .nav .button.active{
+				background-color:rgba(192,192,192,1.0);
+				border:0.05em solid #000;
+				border-radius:1.0em;
+			}
+			
+			.viewer{
+				display:none;
+				position:fixed;
+				top:0em;
+				left:0em;
+				background-color:rgba(0,0,0,0.95);
+				text-align:center;
+				vertical-align:middle;
+				width:100vw;
+				height:100vh;
+				z-index:100;
+			}
+			
+			.viewer img{
+				max-width:80vw;
+				max-height:80vh;
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform:translateY(-50%) translateX(-50%);
+			}
+		
+		</style>
+		
+		<!-- Narrow Screen Styles -->
+		<style>
 			
 			@media only screen and (max-width: 57em){
 			
@@ -291,6 +347,7 @@
 				.bullet{
 					display:none;
 				}
+				
 				.header{
 					position:relative;
 					font-size:3em;
@@ -300,12 +357,15 @@
 					background-position:50% 50%;
 
 				}
+				
 				.header a,.header img{
 					display:block;
 				}
+				
 				.header .logo{
 					display:none;
 				}
+				
 				.logo-icon{
 					display:block;
 					width:2em;
@@ -314,6 +374,7 @@
 					padding-top:0.2em;
 					padding-bottom:0.3em;
 				}
+				
 				.header a{
 					background-color:#333;
 					padding-top:0.55em;
@@ -322,12 +383,15 @@
 					border-bottom:0.05em solid black;
 					text-shadow:0.07em 0.07em black;
 				}
+				
 				.header a:nth-of-type(odd){
 					background-color:#222;
 				}
+				
 				.header a:active{
 					background-color:#666;
 				}
+				
 				.header .menu{
 					position:relative;
 					left:0em;
@@ -342,6 +406,7 @@
 					position:relative;
 					top:-0.5em;
 				}
+				
 				.header .social a img{
 					width:1.5em;
 				}
@@ -349,10 +414,10 @@
 				.first-banner{
 					margin-top:0em;
 				}
+				
 				.credit{
 					display:none;
 				}
-				
 				
 			}
 		
@@ -372,39 +437,47 @@
 		
 			function start(){
 			
+				// Setup the parrallax scrollers
 				var parallaxers = [];
 				var elements = document.querySelectorAll( ".parallax" );
 				for ( var i = 0; i < elements.length; i++ ) parallaxers.push( new parallax( elements[ i ] ) );
 			
+				// Setup the image galleries
 				var galleries = [];
 				var elements = document.querySelectorAll( ".gallery" );
 				for ( var i = 0; i < elements.length; i++ ) galleries.push( new gallery( elements[ i ] ) );
 				
+				// Add arrow key navigation for image viewer
 				window.addEventListener( "keyup", function( e ){
 				
 					for ( var i = 0; i < galleries.length; i++ ){
 						if ( galleries[ i ].enlarged ){
+							// Right arrow
 							if ( e.keyCode == 39 )
 								galleries[ i ].next();
+							// Left arrow
 							if ( e.keyCode == 37 )
 								galleries[ i ].previous();
 						}
 					}
+					
 				} );
 			
 			}
 			
 			function gallery( element ){
 			
+				// Initialize gallery properties
 				var context = this;
 				this.element = element;
 				this.nextUpdate = -1;
-				this.images = element.getAttribute( "rotation" ).split( "," );
 				this.currentIndex = 0;
 				this.viewerIndex = 0;
 				this.enlarged = false;
 				this.delay = 5000;
-
+				this.images = element.getAttribute( "rotation" ).split( "," );
+				
+				// Set up the viewer for larger images
 				this.viewer = document.createElement( "div" );
 				this.viewer.className += "viewer";
 				this.element.addEventListener( "click", function(){
@@ -416,6 +489,7 @@
 				this.viewer.appendChild( document.createElement( "img" ) );
 				document.querySelector( "body" ).appendChild( this.viewer );
 				
+				// Add nav pips for multiple images
 				if ( this.images.length > 1 ){
 					this.nav = document.createElement( "div" );
 					this.nav.className += "nav";
@@ -436,6 +510,7 @@
 					this.element.appendChild( this.nav );
 				}
 				
+				// Advance to next image
 				this.next = function(){
 					if ( context.viewerIndex >= context.images.length - 1 )
 						context.viewerIndex = 0;
@@ -444,6 +519,7 @@
 					context.viewer.querySelector( "img" ).src = context.images[ context.viewerIndex ];
 				}
 				
+				// Go back to previous image
 				this.previous = function(){
 					if ( context.viewerIndex <= 0 )
 						context.viewerIndex = context.images.length - 1;
@@ -452,6 +528,7 @@
 					context.viewer.querySelector( "img" ).src = context.images[ context.viewerIndex ];
 				}
 				
+				// Open and populate image viewer
 				this.enlarge = function(){
 					context.enlarged = true;
 					context.viewer.querySelector( "img" ).src = context.images[ context.currentIndex ];
@@ -459,11 +536,13 @@
 					context.viewer.style.display = "block";
 				}
 				
+				// Close the image viewer
 				this.collapse = function(){
 					context.enlarged = false;
 					context.viewer.style.display = "none";
 				}
 				
+				// Change image and upadate pips
 				this.setImage = function( index ){
 					var now = Date.now();
 					context.element.style.backgroundImage = "url('" + context.images[ index ] + "')";
@@ -476,6 +555,7 @@
 					context.nextUpdate = now + context.delay;
 				}
 				
+				// Auto-rotation manager
 				this.update = function(){
 				
 					var now = Date.now();
@@ -489,6 +569,8 @@
 					window.requestAnimationFrame( context.update );
 				
 				};
+				
+				// Start auto-rotation
 				window.requestAnimationFrame( context.update );
 				
 				return context;
@@ -497,8 +579,11 @@
 			
 			function parallax( element ){
 			
+				// Initialize viewer properties
 				var context = this;
 				this.element = element;
+				
+				// Animation update loop
 				this.update = function(){
 				
 					var element = context.element;
@@ -515,35 +600,37 @@
 					// Get the scroll position where the bottom of the element disappears
 					var scrollEnd = position + element.getBoundingClientRect().height;
 				
+					// Determine progress between those two points
 					var progress = Math.max( 0, Math.min( ( window.scrollY - scrollStart ) / ( scrollEnd - scrollStart ), 1 ) );
 					
+					// Update the position of each of the layers
 					var layers = element.querySelectorAll( ".layer" );
 					for ( var i = 0; i < layers.length; i++ ){
 						var layer = layers[ i ];
 						
+						// Interpolate vertical position linearly between specified values
 						var pstart = parseFloat( layer.getAttribute( "pstart" ) );
 						var pend = parseFloat( layer.getAttribute( "pend" ) );
 						var offset = pstart + ( ( pend - pstart ) * progress );
-						
 						layer.style.top = offset + "%";
 					}
-				
 					window.requestAnimationFrame( context.update ); 
 				
 				};
+				
+				// Start watching for scroll updates
 				window.requestAnimationFrame( this.update );
 				
 				return context;
 			
 			}
-			
-			
 		
 		</script>
 		
 	</head>
 	<body onload="start();">
 
+		<!-- Floating Page Header Menu -->
 		<div class="header">
 			<img class="logo" src="images/logo-white.png" />
 			<img class="logo-icon" src="images/icon.png" />
@@ -559,123 +646,133 @@
 			</span>
 		</div>
 			
+		<!-- Main Body Content -->
 		<div class="core">
-		<a name="accessories" />
-		<a href="#decksoflegend">
-			<div class="parallax first-banner">
-				<img class="layer" pstart="-80" pend="-0" src="images/parallax-background.jpg" />
-				<img class="layer" pstart="-80" pend="-5" src="images/parallax-layer01.png" /><!-- Distant Angels -->
-				<img class="layer" pstart="-80" pend="-7" src="images/parallax-layer02.png" /><!-- Central Angels -->
-				<img class="layer" pstart="-80" pend="-15" src="images/parallax-layer03.png" /><!-- Flanking Angels -->
-				<img class="layer" pstart="-80" pend="-20" src="images/parallax-layer04.png" /><!-- Foreground Angel -->
-				<img class="layer" pstart="-80" pend="-15" src="images/parallax-foreground.png" />
-				<div class="credit" pstart="0" pend="0">The Return of the Host &#x1F58C; Finn McAvinchey</div>
-			</div>
-		</a>
 		
-		<div class="section">
-			<a name="decksoflegend" />
-			<img src="images/card-shape.svg" class="hicon" />
-			<h1>Decks of Legend</h1>
-			<h2>Full Art Deck Box Organizers</h2>
-			<p>Organize your deck box in style with these full-art horizontal deck box dividers, featureing five brand new illustrations by featured artist Finn McAvinchey designed to compliment your favorite decks!</p>
-			<table><tr>
-				<td>
-					<ul>
-						<li>Each pack includes <b>five full art dividers</b>, one with each gloriuos new illustration.</li>
-						<li>Premium <b>30 mil teslin construction</b> ensures high gloss and superior durability.</li>
-						<li>Sized to <b>fit perfectly</b> in any standard horizontal card storage box, fancy or simple.</li>
-						<li>Identifiable from <b>just the tab</b>, so beautiful you can't resist looking at the whole thing.</li>
-						<li>The <b>best and only</b> quality horizontal deck box dividers available on the market today.</li>
-					</ul>
-				</td>
-				<td>
-					<div class="gallery" style="height:16em;" rotation="images/blue.png,images/white.png" />
-				</td>
-			</tr></table>
-			<a class="shop" href="http://amazon.com"><span>Buy On Amazon</span> <img src="images/amazon.png" /></a>
-		</div>
+			<!-- Accessories Header -->
+			<a name="accessories" />
+			<a href="#decksoflegend">
+				<div class="parallax first-banner">
+					<img class="layer" pstart="-80" pend="-0" src="images/parallax-background.jpg" />
+					<img class="layer" pstart="-80" pend="-5" src="images/parallax-layer01.png" /><!-- Distant Angels -->
+					<img class="layer" pstart="-80" pend="-7" src="images/parallax-layer02.png" /><!-- Central Angels -->
+					<img class="layer" pstart="-80" pend="-15" src="images/parallax-layer03.png" /><!-- Flanking Angels -->
+					<img class="layer" pstart="-80" pend="-20" src="images/parallax-layer04.png" /><!-- Foreground Angel -->
+					<img class="layer" pstart="-80" pend="-15" src="images/parallax-foreground.png" />
+					<div class="credit" pstart="0" pend="0">The Return of the Host &#x1F58C; Finn McAvinchey</div>
+				</div>
+			</a>
 			
-		<a name="software" />
-		<a href="http://deckmaven.com" target="_blank">
-			<div class="parallax first-banner">
-				<img class="layer" pstart="-40" pend="20" src="images/tools-background.jpg" />
-				<img class="layer" pstart="-35" pend="17" src="images/tools-layer02.png" /><!-- Cards & Buttons -->
-				<img class="layer" pstart="-35" pend="17" src="images/tools-layer01.png" /><!-- Main Text -->
-				<img class="layer" pstart="-25" pend="13" src="images/tools-foreground.png" />
-				<div class="credit" pstart="-40" pend="20">Deckmaven.com Deck Builder</div>
+			<!-- Deck Box Dividers -->
+			<div class="section">
+				<a name="decksoflegend" />
+				<img src="images/card-shape.svg" class="hicon" />
+				<h1>Decks of Legend</h1>
+				<h2>Full Art Deck Box Organizers</h2>
+				<p>Organize your deck box in style with these full-art horizontal deck box dividers, featureing five brand new illustrations by featured artist Finn McAvinchey designed to compliment your favorite decks!</p>
+				<table><tr>
+					<td>
+						<ul>
+							<li>Each pack includes <b>five full art dividers</b>, one with each gloriuos new illustration.</li>
+							<li>Premium <b>30 mil teslin construction</b> ensures high gloss and superior durability.</li>
+							<li>Sized to <b>fit perfectly</b> in any standard horizontal card storage box, fancy or simple.</li>
+							<li>Identifiable from <b>just the tab</b>, so beautiful you can't resist looking at the whole thing.</li>
+							<li>The <b>best and only</b> quality horizontal deck box dividers available on the market today.</li>
+						</ul>
+					</td>
+					<td>
+						<div class="gallery" style="height:16em;" rotation="images/blue.png,images/white.png" />
+					</td>
+				</tr></table>
+				<a class="shop" href="http://amazon.com"><span>Buy On Amazon</span> <img src="images/amazon.png" /></a>
 			</div>
-		</a>
-		
-		<div class="section">
-			<a name="deckmaven" />
-			<img src="images/hand-shape.svg" class="hicon" />
-			<h1>Deck Maven</h1>
-			<h2>Ultimate Deck Building Tool</h2>
-			<p>A powerful deck design tool right in your browser, putting all the information you need right at your finger tips with instant sorting and filtering, live deck metrics, and quick and easy card selection. And it's completely free!</p>
-			<table><tr>
-				<td>
-					<ul>
-						<li>Complete <b>card information</b> is shown at the top level for fast review and recognition.</li>
-						<li>Enables <b>instant searching and sorting</b> of cards lists, with no frustrating loading times.</li>
-						<li><b>Easily add and remove cards</b>, building out your list then refining it down in minutes.</li>
-						<li>Live <b>deck validation and stats</b> to streamline building for all of your favorite Magic formats.</li>
-						<li>All the <b>latest card data</b> from MTGJSON with user scores from the Gatherer card database.</li>
-					</ul>
-				</td>
-				<td>
-					<div class="gallery" style="height:13.4em;" rotation="images/deckmaven01.jpg" />
-				</td>
-			</tr></table>
-			<h3>Alpha version available now!</h3>
-			<a class="free" href="http://deckmaven.com" target="_blank"><span>DeckMaven.com</span></a>
-		</div>
-		
-		<div class="section">
-			<a name="instanttabletop" />
-			<img src="images/die-shape.svg" class="hicon" />
-			<h1>Instant Tabletop</h1>
-			<h2>Online Roleplaying Platform</h2>
-			<p>A simple fast and efficient online tabletop where you and your friends can play all your favorite tabletop RPGs, totally free. Chat and roll dice all in real time using this powerful and easy to use gaming platform!</p>
-			<table><tr>
-				<td>
-					<ul>
-						<li>Chat in <b>real time</b> from your web browser and roll dice right in line with your chat.</li>
-						<li>Log to <b>change personas</b> while retaining all of your settings and preferences.</li>
-						<li>Create <b>new rooms in seconds</b> and share them as easy as sending your friends a link.</li>
-						<li>Enable <b>notifications</b> to see your friend's messages even when you're elsewhere.</li>
-						<li>Many <b>more features to come</b> as the development continues on this new project.</li>
-					</ul>
-				</td>
-				<td>
-					<div class="gallery" style="height:13.4em;" rotation="images/tabletop01.jpg" />
-				</td>
-			</tr></table>
-			<h3>Alpha version available now!</h3>
-			<a class="free" href="http://instanttabletop.com" target="_blank"><span>InstantTabletop.com</span></a>
-		</div>
+				
+			<!-- Software Header -->
+			<a name="software" />
+			<a href="http://deckmaven.com" target="_blank">
+				<div class="parallax first-banner">
+					<img class="layer" pstart="-40" pend="20" src="images/tools-background.jpg" />
+					<img class="layer" pstart="-35" pend="17" src="images/tools-layer02.png" /><!-- Cards & Buttons -->
+					<img class="layer" pstart="-35" pend="17" src="images/tools-layer01.png" /><!-- Main Text -->
+					<img class="layer" pstart="-25" pend="13" src="images/tools-foreground.png" />
+					<div class="credit" pstart="-40" pend="20">Deckmaven.com Deck Builder</div>
+				</div>
+			</a>
+			
+			<!-- Deckmaven -->
+			<div class="section">
+				<a name="deckmaven" />
+				<img src="images/hand-shape.svg" class="hicon" />
+				<h1>Deck Maven</h1>
+				<h2>Ultimate Deck Building Tool</h2>
+				<p>A powerful deck design tool right in your browser, putting all the information you need right at your finger tips with instant sorting and filtering, live deck metrics, and quick and easy card selection. And it's completely free!</p>
+				<table><tr>
+					<td>
+						<ul>
+							<li>Complete <b>card information</b> is shown at the top level for fast review and recognition.</li>
+							<li>Enables <b>instant searching and sorting</b> of cards lists, with no frustrating loading times.</li>
+							<li><b>Easily add and remove cards</b>, building out your list then refining it down in minutes.</li>
+							<li>Live <b>deck validation and stats</b> to streamline building for all of your favorite Magic formats.</li>
+							<li>All the <b>latest card data</b> from MTGJSON with user scores from the Gatherer card database.</li>
+						</ul>
+					</td>
+					<td>
+						<div class="gallery" style="height:13.4em;" rotation="images/deckmaven01.jpg" />
+					</td>
+				</tr></table>
+				<h3>Alpha version available now!</h3>
+				<a class="free" href="http://deckmaven.com" target="_blank"><span>DeckMaven.com</span></a>
+			</div>
+			
+			<!-- Instant Tabletop -->
+			<div class="section">
+				<a name="instanttabletop" />
+				<img src="images/die-shape.svg" class="hicon" />
+				<h1>Instant Tabletop</h1>
+				<h2>Online Roleplaying Platform</h2>
+				<p>A simple fast and efficient online tabletop where you and your friends can play all your favorite tabletop RPGs, totally free. Chat and roll dice all in real time using this powerful and easy to use gaming platform!</p>
+				<table><tr>
+					<td>
+						<ul>
+							<li>Chat in <b>real time</b> from your web browser and roll dice right in line with your chat.</li>
+							<li>Log to <b>change personas</b> while retaining all of your settings and preferences.</li>
+							<li>Create <b>new rooms in seconds</b> and share them as easy as sending your friends a link.</li>
+							<li>Enable <b>notifications</b> to see your friend's messages even when you're elsewhere.</li>
+							<li>Many <b>more features to come</b> as the development continues on this new project.</li>
+						</ul>
+					</td>
+					<td>
+						<div class="gallery" style="height:13.4em;" rotation="images/tabletop01.jpg" />
+					</td>
+				</tr></table>
+				<h3>Alpha version available now!</h3>
+				<a class="free" href="http://instanttabletop.com" target="_blank"><span>InstantTabletop.com</span></a>
+			</div>
 
-		<a name="aboutus" />
-		<a href="#decksoflegend">
-			<div class="parallax first-banner">
-				<img class="layer" pstart="-80" pend="-0" src="images/parallax-background.jpg" />
-				<img class="layer" pstart="-80" pend="-5" src="images/parallax-layer01.png" /><!-- Distant Angels -->
-				<img class="layer" pstart="-80" pend="-7" src="images/parallax-layer02.png" /><!-- Central Angels -->
-				<img class="layer" pstart="-80" pend="-15" src="images/parallax-layer03.png" /><!-- Flanking Angels -->
-				<img class="layer" pstart="-80" pend="-20" src="images/parallax-layer04.png" /><!-- Foreground Angel -->
-				<img class="layer" pstart="-80" pend="-15" src="images/parallax-foreground.png" />
-				<div class="credit" pstart="0" pend="0">The Return of the Host &#x1F58C; Finn McAvinchey</div>
+			<!-- Information Header -->
+			<a name="aboutus" />
+			<a href="#decksoflegend">
+				<div class="parallax first-banner">
+					<img class="layer" pstart="-80" pend="-0" src="images/parallax-background.jpg" />
+					<img class="layer" pstart="-80" pend="-5" src="images/parallax-layer01.png" /><!-- Distant Angels -->
+					<img class="layer" pstart="-80" pend="-7" src="images/parallax-layer02.png" /><!-- Central Angels -->
+					<img class="layer" pstart="-80" pend="-15" src="images/parallax-layer03.png" /><!-- Flanking Angels -->
+					<img class="layer" pstart="-80" pend="-20" src="images/parallax-layer04.png" /><!-- Foreground Angel -->
+					<img class="layer" pstart="-80" pend="-15" src="images/parallax-foreground.png" />
+					<div class="credit" pstart="0" pend="0">The Return of the Host &#x1F58C; Finn McAvinchey</div>
+				</div>
+			</a>
+			
+			<!-- Contact Us -->
+			<div class="section">
+				<img src="images/card-shape.svg" class="hicon" />
+				<h1>Omnibus Games</h1>
+				<h2>Because Better Design Is More Fun</h2>
+				<p>At Omnibus Games we believe that your game time is precious, and that every player's experience can be enhanced with quality tools and accessories. That's why we focus on bringing you what you need to prep for game night without spending all week on it: high performance, aestheticly pleasing tools and products that do more than just get the job done. We want our products to be something you enjoy each and every time you use them..</p>
+				<p><b>Have a question about one of our products, or something you'd like to see us create?</b></p>
+				<a class="free" href="mailto:contact@omnibusgames.com"><span>Contact Us</span></a>
 			</div>
-		</a>
-		
-		<div class="section">
-			<img src="images/card-shape.svg" class="hicon" />
-			<h1>Omnibus Games</h1>
-			<h2>Because Better Design Is More Fun</h2>
-			<p>At Omnibus Games we believe that your game time is precious, and that every player's experience can be enhanced with quality tools and accessories. That's why we focus on bringing you what you need to prep for game night without spending all week on it: high performance, aestheticly pleasing tools and products that do more than just get the job done. We want our products to be something you enjoy each and every time you use them..</p>
-			<p><b>Have a question about one of our products, or something you'd like to see us create?</b></p>
-			<a class="free" href="mailto:contact@omnibusgames.com"><span>Contact Us</span></a>
-		</div>
+			
 		</div>
 
 	</body>
